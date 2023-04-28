@@ -129,7 +129,7 @@ const Products = (props) => {
         <Button variant="primary" size="large">
           {item.name}:{item.cost}
         </Button>
-        <input name={item.name} type="submit" onClick={addToCart}></input>
+        <input name={item.name} type="submit" onClick={addToCart} disabled={!canAdd}></input>
       </li>
     );
   });
