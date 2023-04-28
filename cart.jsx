@@ -122,6 +122,7 @@ const Products = (props) => {
     } else {
       item.hasRestocked = false;
     }
+    if (item.instock <= 0) canAdd = false;
 
     return (
       <li key={index}>
