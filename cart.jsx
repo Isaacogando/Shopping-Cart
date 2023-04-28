@@ -113,8 +113,15 @@ const Products = (props) => {
   const photos = ["apple.png", "orange.png", "beans.png", "cabbage.png"];
 
   let list = items.map((item, index) => {
-    //let n = index + 1049;
-    //let url = "https://picsum.photos/id/" + n + "/50/50";
+    let n = index + 1049;
+    let url = "https://picsum.photos/id/" + n + "/50/50";
+    let canAdd = true;
+    
+    if(!item.hasRestocked) {
+      if (cart.some(ind => ind.name === item.name)) item.instock--;
+    } else {
+      item.hasRestocked = false;
+    }
 
     return (
       <li key={index}>
